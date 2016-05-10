@@ -16,6 +16,7 @@ def copy_stop_codes(src_path, dst_path, out_path):
         if stop_name in lookup:
             stop = lookup[stop_name]
             row['stop_code'] = stop['stop_code']
+            del lookup[stop_name]
         else:
             max_stop_code += 1
             row['stop_code'] = max_stop_code
